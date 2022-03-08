@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Text, View, Image, TextInput, TouchableOpacity } from "react-native";
+import { Button, Text, View, Image, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 
 import {useNavigation} from '@react-navigation/native';
 
@@ -12,15 +12,19 @@ export default function Login(){
     // }
 
     return (
-        <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
-            <Text>Login</Text>
+        <View style={styles.container}>
+
+            <Text style={styles.login}>Login</Text>
+
             <TextInput
+                style={styles.inputForm}
                 placeholder="Usuário"
                 autoCorrect={false}
                 onChangeText={ () => {} }
             
             />
             <TextInput
+                style={styles.inputForm}
                 placeholder="Senha"
                 autoCorrect={false}
                 onChangeText={ () => {} }
@@ -32,7 +36,7 @@ export default function Login(){
                     Acessar
                 </Text>
             </TouchableOpacity>
-            <Text>Esqueceu a senha?</Text>
+            <Text>Esqueceu sua senha?</Text>
             <Text>Cadastrar</Text>
             
             {/* 
@@ -42,3 +46,29 @@ export default function Login(){
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1, 
+        justifyContent: "center", 
+        alignItems: "center",
+        backgroundColor: '#161616'
+    },
+    login: {
+        color: "#fff",
+        marginBottom: 50,
+        fontSize: 40
+    },
+    inputForm:{
+        backgroundColor: "#fff",
+        width: "90%",
+        marginBottom: 15,
+        color: '#222',
+        fontSize: 18,
+        borderRadius: 6,
+        padding: 10,
+    },
+    btnSubmitForm:{
+        backgroundColor: '#ebb105',
+    }
+})
