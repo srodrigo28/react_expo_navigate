@@ -6,6 +6,7 @@ const Stack = createNativeStackNavigator();
 
 import Login from "./pages/Login";
 import NewUser from "./pages/NewUser";
+import RecoverPassword from "./pages/RecoverPassword";
 
 export default function Routes() {
     return (
@@ -13,6 +14,7 @@ export default function Routes() {
             <Stack.Navigator>
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="NewUser" component={NewUser} />
+                <Stack.Screen name="RecoverPassword" component={RecoverPassword} />
             </Stack.Navigator>
         </NavigationContainer>
     )
